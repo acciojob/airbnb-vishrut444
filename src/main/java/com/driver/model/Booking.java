@@ -2,6 +2,7 @@ package com.driver.model;
 
 public class Booking {
 
+    //PK
     private String bookingId; //This will be a random UUID generated String
 
     private int bookingAadharCard;
