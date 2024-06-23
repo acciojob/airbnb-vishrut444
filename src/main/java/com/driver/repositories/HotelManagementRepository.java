@@ -19,11 +19,8 @@ public class HotelManagementRepository {
     HashMap<String, Booking> bookingDb = new HashMap<>();
 
     public boolean hotelExists(Hotel hotel) {
-        String name = hotel.getHotelName();
-        for(Map.Entry<String,Hotel> e: hotelDB.entrySet()){
-            if(Objects.equals(e.getKey(), name)) return false;
-        }
-        return true;
+        String hotelName = hotel.getHotelName();
+        return hotelDB.containsKey(hotelName);
     }
 
     public void addHotel(Hotel hotel) {

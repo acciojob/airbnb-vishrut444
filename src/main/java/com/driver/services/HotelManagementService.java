@@ -16,11 +16,13 @@ public class HotelManagementService {
 
 
     public boolean addHotel(Hotel hotel) {
-        //check if hotel exists or not
-        if(hotel.getHotelName().isEmpty()) return false;
+        //check if hotel e  exists or not
+        if(hotel==null || hotel.getHotelName()==null || hotel.getHotelName().isEmpty()) return false;
+
+        //check if hotel already exists
         if(hotelManagementRepository.hotelExists(hotel)) return false;
 
-        //if hotel doesnot exist
+        //if hotel doesn't exist
         hotelManagementRepository.addHotel(hotel);
         return true;
     }

@@ -33,7 +33,7 @@ public class HotelManagementController {
         //in all other cases return SUCCESS after successfully adding the hotel to the hotelDb.
         boolean hotelAdded = hotelManagementService.addHotel(hotel);
         if(hotelAdded) return "SUCCESS";
-        return null;
+        return "FAILURE";
     }
 
     @PostMapping("/add-user")
